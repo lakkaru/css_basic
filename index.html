@@ -80,6 +80,10 @@
         border-radius: 50px;
         transition: 0.3s;
       }
+      /* sellecting chiled element  */
+      #aboutMeDiv > div {
+        padding: 5px;
+      }
       /* enlarging first letter of each name */
       .largeFirstletter::first-letter {
         font-size: 30px;
@@ -120,7 +124,7 @@
         width: 200px;
         text-align: center;
       }
-      input[type="number"]:out-of-range{
+      input[type="number"]:out-of-range {
         color: red;
       }
 
@@ -249,11 +253,11 @@
         <div style="position: relative">
           <div class="inputCat">
             <p>Your Name</p>
-            <input type="text" autofocus/>
+            <input type="text" autofocus />
           </div>
           <div class="inputCat">
             <p>Your age</p>
-            <input type="number" min="13" max="100"/>
+            <input type="number" min="13" max="100" />
           </div>
           <h4>Your experience with</h4>
           <div
