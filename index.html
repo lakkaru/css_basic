@@ -1,68 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Course Info</title>
-</head>
-<body>
-    <h1>How to Learn react</h1>
-    <h2>What is React</h2>
-    <p>React is a javaScript library for building user interfaces.</p>
-    <h2>What you will learn</h2>
-    <ol>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JS</li>
-        <li>React</li>
-    </ol>
-    <table>
-        <thead>
-            <tr>Number</tr>
-            <tr>Title</tr>
-            <tr>Description</tr>
-        </thead>
-        <tbody>
+
+    <style>
+      #container {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(82, 145, 145);
+        padding: 10px;
+      }
+      #card {
+        border: 1px solid black;
+        border-radius: 20px;
+        padding: 20px;
+      }
+      h1 {
+        color: rgb(20, 38, 199);
+      }
+      h2 {
+        color: brown;
+      }
+      ol {
+        list-style: none;
+        /* counter-reset: item; */
+      }
+      li {
+        counter-increment: num;
+        margin-bottom: 5px;
+      }
+      li:before {
+        margin-right: 10px;
+        content: counter(num);
+        background: rgb(235, 118, 8);
+        border-radius: 50%;
+        color: white;
+        width: 1.2em;
+        text-align: center;
+        display: inline-block;
+      }
+      /* addmnig borders to table cells */
+      th,
+      td {
+        border: 1px solid black;
+        padding: 7px;
+      }
+      /* collapsing spaces between borders */
+      table {
+        border-collapse: collapse;
+        background-color: antiquewhite;
+      }
+      /* seperating rows with different colors */
+      tr:nth-child(even) {
+        background-color: rgb(143, 143, 25);
+      }
+      /* changing color of last row */
+      tr:last-child {
+        background-color: brown;
+      }
+      /* changing back last row color of thead  */
+      tr th {
+        font-weight: bold;
+        background-color: green;
+      }
+      /* evenly distributing contents horizontaly */
+      #aboutMeDiv {
+        display: flex;
+        justify-content: space-around;
+        background-color: rgb(70, 207, 161);
+        transition: 0.3s;
+        border-radius: 10px;
+      }
+      /* adding transition to hover */
+      #aboutMeDiv:hover {
+        background-color: rgb(92, 155, 10);
+        border-radius: 50px;
+        transition: 0.3s;
+      }
+      /* enlarging first letter of each name */
+      .largeFirstletter::first-letter {
+        font-size: 30px;
+      }
+      /* setting profile image size */
+      img {
+        width: 200px;
+      }
+      /* seeting social media images width  */
+      a img {
+        width: 20px;
+      }
+      /* alligning social media images */
+      .inputCat {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      /* setting position absolute from left end with 
+      reference to position relative div  */
+      input {
+        position: absolute;
+        left: 150px;
+        width: 200px;
+        height: 25px;
+      }
+
+      /* alternating font size */
+      input[type="text"] {
+        font-size: 13px;
+        padding: 2px;
+        text-align: center;
+      }
+      /* number type did not get width property commonly */
+      input[type="number"] {
+        font-size: 13px;
+        padding: 2px;
+        width: 200px;
+        text-align: center;
+      }
+      input[type="number"]:out-of-range{
+        color: red;
+      }
+
+      /* decorating slider  */
+      /* must understand */
+      @media screen and (-webkit-min-device-pixel-ratio: 0) {
+        input[type="range"] {
+          overflow: hidden;
+          width: 200px;
+          -webkit-appearance: none;
+          background-color: #f3559c;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+          width: 10px;
+          -webkit-appearance: none;
+          height: 25px;
+          cursor: ew-resize;
+          background: #434343;
+          box-shadow: -100px 0 0 100px #17cc11;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="card">
+        <h1>How to Learn react</h1>
+        <h2>What is React</h2>
+        <p>
+          <strong>React</strong> is a <em>javaScript</em> library for building
+          user <mark>interfaces</mark> .
+        </p>
+        <h2>What you will learn</h2>
+        <ol>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JS</li>
+          <li>React</li>
+        </ol>
+        <table>
+          <thead>
             <tr>
-                <td>01</td>
-                <td>HTML</td>
-                <td>Basic HTML syntax and elements.</td>
+              <th>Number</th>
+              <th>Title</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01</td>
+              <td>HTML</td>
+              <td>Basic HTML syntax and elements.</td>
             </tr>
             <tr>
-                <td>02</td>
-                <td>CSS</td>
-                <td>CSS selectors and how to use.</td>
+              <td>02</td>
+              <td>CSS</td>
+              <td>CSS selectors and how to use.</td>
             </tr>
             <tr>
-                <td>03</td>
-                <td>JS</td>
-                <td>Core concepts of JS as a Programing language.</td>
+              <td>03</td>
+              <td>JS</td>
+              <td>Core concepts of JS as a Programing language.</td>
             </tr>
             <tr>
-                <td>04</td>
-                <td>React</td>
-                <td>Every concepts and usage of ReactJs laibrary.</td>
+              <td>04</td>
+              <td>React</td>
+              <td>Every concepts and usage of ReactJs laibrary.</td>
             </tr>
-        </tbody>
-    </table>
-    <hr>
-    <h2>About the instructor</h2>
-    <div>
-        <p>Lakshman Karunasena</p>
-        <p>MERN Stac and Mobile developer</p>
-        <p>linkd</p>
-        <p>fb</p>
-        <p>insta</p>
-        <p>twitter</p>
-        <img src="./Lakkaru_image.png" alt="Lakshman Karunasena">
+            <tr>
+              <td colspan="3" style="text-align: center">
+                <b>You will become a React genious.</b>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+        <h2>About the instructor</h2>
+        <div id="aboutMeDiv">
+          <div>
+            <div style="display: flex; font-size: 20px; font-weight: bold">
+              <p class="largeFirstletter">Lakshman &nbsp</p>
+              <p class="largeFirstletter">Karunasena</p>
+            </div>
+            <p>MERN Stack and Mobile developer</p>
+
+            <div style="display: flex; justify-content: space-around">
+              <p>
+                <a href="https://twitter.com/lakkaru"
+                  ><img
+                    src="https://www.mhpcolorado.org/wp-content/uploads/2022/06/Twitter.png"
+                    alt="twitter"
+                /></a>
+              </p>
+              <p>
+                <a href="https://fasebook.com/lakkaru"
+                  ><img
+                    src="https://cdn-icons-png.flaticon.com/512/4494/4494475.png"
+                    alt="facebook"
+                /></a>
+              </p>
+              <p>
+                <a href="https://www.linkedin.com/in/lakkaru/"
+                  ><img
+                    src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png"
+                    alt="linkedin"
+                /></a>
+              </p>
+              <p>
+                <a href="https://www.instagram.com/lakkaru/"
+                  ><img
+                    src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+                    alt="instagram"
+                /></a>
+              </p>
+            </div>
+          </div>
+          <img src="./Lakkaru_image.png" alt="Lakshman Karunasena" />
+        </div>
+        <hr />
+        <h2>Registration form</h2>
+        <p>
+          To register for the course, you must provide the following
+          information.
+        </p>
+        <div style="position: relative">
+          <div class="inputCat">
+            <p>Your Name</p>
+            <input type="text" autofocus/>
+          </div>
+          <div class="inputCat">
+            <p>Your age</p>
+            <input type="number" min="13" max="100"/>
+          </div>
+          <h4>Your experiance with</h4>
+          <div
+            class="slidecontainer"
+            style="display: flex; align-items: center"
+          >
+            <p>HTML</p>
+            <input type="range" />
+          </div>
+          <div
+            class="slidecontainer"
+            style="display: flex; align-items: center"
+          >
+            <p>CSS</p>
+            <input type="range" />
+          </div>
+          <div
+            class="slidecontainer"
+            style="display: flex; align-items: center"
+          >
+            <p>JS</p>
+            <input type="range" />
+          </div>
+          <div
+            class="slidecontainer"
+            style="display: flex; align-items: center"
+          >
+            <p>React</p>
+            <input type="range" />
+          </div>
+        </div>
+      </div>
     </div>
-    <hr>
-    <h2>Registration form</h2>
-    <p>To register for the course, you must provide the following information.</p>
-    <p>Your Name</p>
-    <input type="text">
-    <p>Your age</p>
-    <input type="number">
-</body>
+  </body>
 </html>
